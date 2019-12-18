@@ -1,121 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Daily Planner</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="moment.js"></script>
-    <script src="https://kit.fontawesome.com/112d5ef751.js" crossorigin="anonymous"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Work Day Scheduler</title>
 </head>
 
 <body>
+    <header class="jumbotron">
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <p id="currentDay" class="lead"></p>
+    </header>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-centered" id="title">
-                <br>
-                <h1>Work Day Planner</h1><br>
-                A simple calendar app for scheduling my work day.<br>
+        <div id="hour-9" class="row time-block">
+            <div class="col-md-1 hour">
+                9AM
             </div>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-        <br>
-        <br>
-        <div class='row'>
-            <div class="col-1 hour" id="0H">9:00 AM</div>
-            <div class="col-10 plan0 plan">
-                <form>
-                    <textarea id="0plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-10" class="row time-block">
+            <div class="col-md-1 hour">
+                10AM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="1H">10:00 AM</div>
-            <div class="col-10 plan1 plan">
-                <form>
-                    <textarea id="1plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-11" class="row time-block">
+            <div class="col-md-1 hour">
+                11AM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="2H">11:00 AM</div>
-            <div class="col-10 plan2 plan">
-                <form>
-                    <textarea id="2plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-12" class="row time-block">
+            <div class="col-md-1 hour">
+                12PM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="3H">12:00 PM</div>
-            <div class="col-10 plan3 plan">
-                <form>
-                    <textarea id="3plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-13" class="row time-block">
+            <div class="col-md-1 hour">
+                1PM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="4H">1:00 PM</div>
-            <div class="col-10 plan4 plan">
-                <form>
-                    <textarea id="4plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-14" class="row time-block">
+            <div class="col-md-1 hour">
+                2PM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="5H">2:00 PM</div>
-            <div class="col-10 plan5 plan">
-                <form>
-                    <textarea id="5plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-15" class="row time-block">
+            <div class="col-md-1 hour">
+                3PM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="6H">3:00 PM</div>
-            <div class="col-10 plan6 plan">
-                <form>
-                    <textarea id="6plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-16" class="row time-block">
+            <div class="col-md-1 hour">
+                4PM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="7H">4:00 PM</div>
-            <div class="col-10 plan7 plan">
-                <form>
-                    <textarea id="7plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
+        <div id="hour-17" class="row time-block">
+            <div class="col-md-1 hour">
+                5PM
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
+            <textarea class="col-md-10 description">
+      </textarea>
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
-
-        <div class='row'>
-            <div class="col-1 hour" id="8H">5:00 PM</div>
-            <div class="col-10 plan8 plan">
-                <form>
-                    <textarea id="8plan" class="textBox" placeholder="Log event here..."></textarea>
-                </form>
-            </div>
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-save"></i></button>
-        </div>
-
-    </div>
-    <script src='script.js'></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
