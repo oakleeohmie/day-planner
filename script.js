@@ -1,95 +1,36 @@
+var currentHour = moment().hours()
 $(document).ready(function () {
+    $(".saveBtn").on("click", function () {
+        savedEvent = $(this).prev().val();
+        localStorage.setItem($(".description").val(), savedEvent);
+        console.log($(this))
+    });
+    var currentHour = moment().hours()
+    function hoursUpdater() {
 
-    function planner() {
-        var d = new Date;
-        var h = d.getHours();
-        var dayPlans = JSON.parse(localStorage.getItem("description"));
-        if (h === 9) {
-            $('#hour-9').css("background-color", "red")
+        console.log(currentHour);
+
+    }
+
+
+
+    $(".time-block").each(function () {
+        var blockHour = $(this).attr("id").split("-")[1]
+
+        if (blockHour < currentHour) {
+            console.log("Block Hour is before current hour");
+            $(".time-block").css("background-color", "grey");
+        } else if (blockHour > currentHour) {
+            console.log("Block hour is greater than current hour")
+            $(".time-block").css("background-color", "green");
+        } else {
+            $(".time-block").css("background-color", "red");
         }
-        if (h > 9) {
-            $('#hour-9').css("background-color", "grey")
-        }
-        if (h < 9) {
-            $('#hour-9').css("background-color", "green")
-        }
-        if (h === 10) {
-            $('#hour-10').css("background-color", "red")
-        }
-        if (h > 10) {
-            $('#hour-10').css("background-color", "grey")
-        }
-        if (h < 10) {
-            $('#hour-10').css("background-color", "green")
-        }
-        if (h === 11) {
-            $('#hour-11').css("background-color", "red")
-        }
-        if (h > 11) {
-            $('#hour-11').css("background-color", "gray")
-        }
-        if (h < 11) {
-            $('#hour-11').css("background-color", "green")
-        }
-        if (h === 12) {
-            $('#hour-12').css("background-color", "red")
-        }
-        if (h > 12) {
-            $('#hour-12').css("background-color", "gray")
-        }
-        if (h < 12) {
-            $('#hour-12').css("background-color", "green")
-        }
-        if (h === [13]) {
-            $('#hour-13').css("background-color", "red")
-        }
-        if (h > 13) {
-            $('#hour-13').css("background-color", "gray")
-        }
-        if (h < 13) {
-            $('#hour-13').css("background-color", "green")
-        }
-        if (h === 14) {
-            $('#hour-14').css("background-color", "red")
-        }
-        if (h > 14) {
-            $('#hour-14').css("background-color", "gray")
-        }
-        if (h < 14) {
-            $('#hour-14').css("background-color", "green")
-        }
-        if (h === 15) {
-            $('#hour-15').css("background-color", "red")
-        }
-        if (h > 15) {
-            $('#hour-15').css("background-color", "gray")
-        }
-        if (h < 15) {
-            $('#hour-15').css("background-color", "green")
-        }
-        if (h === 16) {
-            $('#hour-16').css("background-color", "red")
-        }
-        if (h > 16) {
-            $('#hour-16').css("background-color", "gray")
-        }
-        if (h < 16) {
-            $('#hour-16').css("background-color", "green")
-        }
-        if (h === 17) {
-            $('#hour-17').css("background-color", "red")
-        }
-        if (h > 17) {
-            $('#hour-17').css("background-color", "gray")
-        }
-        if (h < 17) {
-            $('#hour-17').css("background-color", "green")
-        }
-        $('.btn').click(dayPlans);
-        function dayPlans(e) {
-            localStorage.setItem("description", JSON.stringify(dayPlans));
-        };
-    };
+    });
+
+
+
+    $(".description").val(localStorage.getItem($(this).val()));
+    hoursUpdater();
 });
-planner();
-saveEvent();
+
