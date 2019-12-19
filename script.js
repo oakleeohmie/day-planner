@@ -84,3 +84,4 @@ $(document).ready(function () {
     hoursUpdater();
     var interval = setInterval(hoursUpdater, 15000);
 });
+
